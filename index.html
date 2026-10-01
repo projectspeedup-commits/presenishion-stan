@@ -86,6 +86,23 @@
     color:var(--acc);border-radius:999px;padding:8px 20px;font-size:14px;letter-spacing:.18em;
     text-transform:uppercase;margin-bottom:26px}
   .glow{position:absolute;border-radius:50%;filter:blur(120px);opacity:.25;pointer-events:none}
+  /* ---------- app screenshots ---------- */
+  .shotrow{display:flex;gap:26px;justify-content:center;align-items:flex-start;margin-top:30px;flex-wrap:wrap}
+  .shot{border-radius:16px;border:1px solid var(--line);box-shadow:0 18px 50px rgba(0,0,0,.55);
+    max-height:54vh;width:auto;max-width:46%;object-fit:cover;object-position:top}
+  .shotpair{display:flex;gap:26px;justify-content:center;align-items:flex-start;margin-top:24px;flex-wrap:wrap}
+  .shotpair>div{flex:1 1 0;min-width:0}
+  .shotpair img{max-height:50vh;max-width:100%;width:auto;border-radius:16px;border:1px solid var(--line);
+    box-shadow:0 18px 50px rgba(0,0,0,.55);display:block;margin:0 auto}
+  .cap{font-size:13px;color:var(--mut);margin-top:10px;text-align:center}
+  .shotslide{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center;margin-top:22px}
+  .shotslide img{max-width:100%;max-height:60vh;width:auto;display:block;margin:0 auto;border-radius:16px;
+    border:1px solid var(--line);box-shadow:0 18px 50px rgba(0,0,0,.55)}
+  .shotslide ul{list-style:none;display:flex;flex-direction:column;gap:18px}
+  .shotslide li{font-size:clamp(14px,1.35vw,18px);line-height:1.45;color:var(--mut);padding-left:28px;position:relative}
+  .shotslide li::before{content:"—";position:absolute;left:0;color:var(--acc);font-weight:800}
+  .shotslide li b{color:var(--txt)}
+  @media(max-width:900px){.shotslide{grid-template-columns:1fr}.shotslide img{max-height:42vh}}
   /* ---------- nav chrome ---------- */
   #bar{position:fixed;top:0;left:0;height:4px;background:var(--acc);width:0;z-index:50;
     transition:width .5s ease;border-radius:0 4px 4px 0}
@@ -179,7 +196,118 @@
   </div>
 </section>
 
-<!-- 6. ЧТО ВИДИТ РУКОВОДИТЕЛЬ -->
+
+<!-- 6. ПУЛЬТ: ДВЕ ТЕМЫ -->
+<section class="slide">
+  <div class="inner" style="text-align:center">
+    <div class="kicker a" style="--d:.1s">Живой экран системы</div>
+    <h2 class="a" style="--d:.25s">Так выглядит пульт у стана</h2>
+    <div class="shotpair">
+      <div class="a" style="--d:.5s"><img src="screen-pult-light.jpg" alt="Пульт — светлая тема"><div class="cap">☀️ Светлая тема — для дневной смены</div></div>
+      <div class="a" style="--d:.7s"><img src="screen-pult-dark.jpg" alt="Пульт — тёмная тема"><div class="cap">🌙 Тёмная тема — для ночной смены, глаза не устают</div></div>
+    </div>
+    <p class="sub a" style="--d:1s;margin:20px auto 0">Скриншоты работающего приложения · stan.zmk-project.ru<br>
+    Тема переключается одним нажатием — комфортно и днём, и ночью.</p>
+  </div>
+</section>
+
+<!-- 7. РАБОЧЕМУ УДОБНО -->
+<section class="slide">
+  <div class="inner">
+    <div class="kicker a" style="--d:.1s">Для людей у стана</div>
+    <h2 class="a" style="--d:.25s">Рабочему комфортно — без лишних действий</h2>
+    <div class="grid g3">
+      <div class="card a" style="--d:.45s"><h3>👆 Кнопки на весь экран</h3><p>Крупно и ярко — попадёшь даже в перчатках, без мелких полей.</p></div>
+      <div class="card a" style="--d:.55s"><h3>🧱 Причина — одна плитка</h3><p>Не список из 21 кода, а три понятные группы.</p></div>
+      <div class="card a" style="--d:.65s"><h3>⏱️ Время само</h3><p>Часы, смену и сутки система знает сама — вводить не нужно.</p></div>
+      <div class="card a" style="--d:.75s"><h3>↩️ Забыл — добавишь потом</h3><p>Не нажал вовремя? Простой добавляется задним числом с поправкой времени.</p></div>
+      <div class="card a" style="--d:.85s"><h3>📡 Без связи не теряется</h3><p>Нажатия хранятся на планшете и уходят сами, когда сеть появится.</p></div>
+      <div class="card a" style="--d:.95s"><h3>🎓 Интуитивно понятно</h3><p>Обучение — десять минут: показал один раз — человек работает.</p></div>
+    </div>
+    <p class="big a" style="--d:1.15s;margin-top:28px;color:var(--acc)">Чем проще рабочему — тем честнее данные у вас.</p>
+  </div>
+</section>
+
+<!-- 8. ПРОСТОИ ЗА СМЕНУ -->
+<section class="slide">
+  <div class="inner">
+    <div class="kicker a" style="--d:.1s">Раздел «Простои за смену»</div>
+    <h2 class="a" style="--d:.25s">Каждая остановка — отдельной строкой</h2>
+    <div class="shotslide">
+      <img class="a" style="--d:.5s" src="screen-prostoi.jpg" alt="Простои за смену">
+      <ul class="a" style="--d:.7s">
+        <li><b>Когда встал и когда пошёл</b> — с точностью до минуты, время ставит система.</li>
+        <li><b>Причина и комментарий</b> — что случилось и что сделали.</li>
+        <li><b>Длительность считается сама</b> — никто не считает в уме.</li>
+        <li><b>Забытую остановку</b> можно добавить задним числом.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 9. ЗАКРЫТИЕ СМЕНЫ -->
+<section class="slide">
+  <div class="inner">
+    <div class="kicker a" style="--d:.1s">Раздел «Закрытие смены»</div>
+    <h2 class="a" style="--d:.25s">Смена сдаётся с проверкой</h2>
+    <div class="shotslide">
+      <img class="a" style="--d:.5s" src="screen-zakrytie.jpg" alt="Закрытие смены">
+      <ul class="a" style="--d:.7s">
+        <li>Перед сдачей система <b>спрашивает о состоянии стана</b> — не даёт потерять забытую остановку.</li>
+        <li>Итог виден сразу: <b>«Принято сервером»</b> — без бумажного журнала.</li>
+        <li>Долгий ремонт <b>передаётся из смены в смену</b> — видно, кто и что успел сделать.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 10. СВЯЗАТЬСЯ -->
+<section class="slide">
+  <div class="inner">
+    <div class="kicker a" style="--d:.1s">Раздел «Связаться»</div>
+    <h2 class="a" style="--d:.25s">Нужные люди — в одном нажатии</h2>
+    <div class="shotslide">
+      <img class="a" style="--d:.5s" src="screen-svyaz.jpg" alt="Связаться">
+      <ul class="a" style="--d:.7s">
+        <li>Звонок <b>мастеру смены, механику, электрику и диспетчеру</b> — прямо с планшета.</li>
+        <li>Не нужно искать телефон по бумажкам на стенде.</li>
+        <li>Контакты меняет администратор — <b>всегда актуальные</b>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 11. ПОКАЗАТЕЛИ: ДВЕ ТЕМЫ -->
+<section class="slide">
+  <div class="inner" style="text-align:center">
+    <div class="kicker a" style="--d:.1s">Раздел «Показатели»</div>
+    <h2 class="a" style="--d:.25s">Здоровье стана в цифрах</h2>
+    <div class="shotpair">
+      <div class="a" style="--d:.5s"><img src="screen-pokazateli-light.jpg" alt="Показатели — светлая тема"><div class="cap">☀️ Светлая тема</div></div>
+      <div class="a" style="--d:.7s"><img src="screen-pokazateli-dark.jpg" alt="Показатели — тёмная тема"><div class="cap">🌙 Тёмная тема</div></div>
+    </div>
+    <p class="sub a" style="--d:1s;margin:20px auto 0">Доступность, время между отказами, время ремонта и простой по причинам —
+    за смену, сутки, 7 суток и месяц. В любой теме.</p>
+  </div>
+</section>
+
+<!-- 12. АДМИНИСТРАТОР -->
+<section class="slide">
+  <div class="inner">
+    <div class="kicker a" style="--d:.1s">Раздел «Администратор»</div>
+    <h2 class="a" style="--d:.25s">Настройки — без программиста</h2>
+    <div class="shotslide">
+      <img class="a" style="--d:.5s" src="screen-admin.jpg" alt="Администратор">
+      <ul class="a" style="--d:.7s">
+        <li><b>Время смен, список мастеров, телефоны</b> — меняются прямо в приложении.</li>
+        <li>Новая бригада или новый мастер? <b>Две минуты</b> — и система обновлена.</li>
+        <li>Не нужен айтишник на каждую мелочь — <b>меньше зависимость и расходы</b>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 13. ЧТО ВИДИТ РУКОВОДИТЕЛЬ -->
 <section class="slide">
   <div class="inner">
     <div class="kicker a" style="--d:.1s">Что видит руководитель</div>
@@ -208,21 +336,7 @@
   </div>
 </section>
 
-<!-- 7. ОТВЕТСТВЕННОСТЬ -->
-<section class="slide">
-  <div class="inner">
-    <div class="kicker a" style="--d:.1s">Порядок и ответственность</div>
-    <h2 class="a" style="--d:.25s">У каждой записи есть автор</h2>
-    <div class="grid g2" style="margin-top:36px">
-      <div class="card a" style="--d:.5s"><h3>👤 Смену принимают по ФИО</h3><p>Мастер выбирает себя из списка — его имя стоит на всех нажатиях смены.</p></div>
-      <div class="card a" style="--d:.65s"><h3>✅ Закрытие смены с проверкой</h3><p>Перед сдачей система спрашивает о состоянии стана и не даёт потерять забытую остановку.</p></div>
-      <div class="card a" style="--d:.8s"><h3>🔧 Ремонт передаётся по сменам</h3><p>Долгий ремонт виден целиком: кто, когда и что успел сделать.</p></div>
-      <div class="card a" style="--d:.95s"><h3>📞 «Связаться» — одной кнопкой</h3><p>Звонок мастеру смены, механику, электрику и диспетчеру прямо с планшета.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 8. НАДЁЖНОСТЬ -->
+<!-- 14. НАДЁЖНОСТЬ -->
 <section class="slide">
   <div class="inner">
     <div class="kicker a" style="--d:.1s">Надёжность</div>
@@ -238,7 +352,7 @@
   </div>
 </section>
 
-<!-- 9. БЫЛО / СТАЛО -->
+<!-- 15. БЫЛО / СТАЛО -->
 <section class="slide">
   <div class="inner">
     <div class="kicker a" style="--d:.1s">Эффект</div>
@@ -255,7 +369,7 @@
   </div>
 </section>
 
-<!-- 10. ДЕНЬГИ -->
+<!-- 16. ДЕНЬГИ -->
 <section class="slide">
   <div class="glow" style="width:460px;height:460px;background:var(--green);bottom:-180px;left:-140px"></div>
   <div class="inner" style="text-align:center">
@@ -275,7 +389,7 @@
   </div>
 </section>
 
-<!-- 11. ГОТОВНОСТЬ -->
+<!-- 17. ГОТОВНОСТЬ -->
 <section class="slide">
   <div class="inner">
     <div class="kicker a" style="--d:.1s">Готовность сегодня</div>
@@ -292,7 +406,7 @@
   </div>
 </section>
 
-<!-- 12. ПЛАН -->
+<!-- 18. ПЛАН -->
 <section class="slide">
   <div class="inner">
     <div class="kicker a" style="--d:.1s">План</div>
@@ -309,7 +423,7 @@
   </div>
 </section>
 
-<!-- 13. РЕШЕНИЯ СОБСТВЕННИКА -->
+<!-- 19. РЕШЕНИЯ СОБСТВЕННИКА -->
 <section class="slide">
   <div class="glow" style="width:500px;height:500px;background:var(--acc);top:-160px;left:-160px;opacity:.16"></div>
   <div class="inner">
@@ -325,7 +439,7 @@
   </div>
 </section>
 
-<!-- 14. ФИНАЛ -->
+<!-- 20. ФИНАЛ -->
 <section class="slide">
   <div class="glow" style="width:560px;height:560px;background:var(--green);bottom:-200px;right:-160px"></div>
   <div class="inner" style="text-align:center">
