@@ -70,6 +70,7 @@
   th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}
   th{color:var(--mut);text-transform:uppercase;font-size:.78em;letter-spacing:.14em}
   td.was{color:var(--mut)} td.now{color:var(--green);font-weight:600}
+  .blur{filter:blur(4px);opacity:.65;user-select:none;pointer-events:none}
   tr{opacity:0}
   .slide.active tr{animation:rise .5s ease forwards;animation-delay:var(--d)}
   /* ---------- formula ---------- */
@@ -246,7 +247,7 @@
       <tr class="a" style="--d:.4s;opacity:1;animation:none"><th></th><th>Было</th><th>Стало</th></tr>
       <tr style="--d:.55s"><td><b>Время простоя</b></td><td class="was">по памяти, в конце смены</td><td class="now">ставит система в момент нажатия</td></tr>
       <tr style="--d:.7s"><td><b>Ввод на остановку</b></td><td class="was">7–10 полей формы</td><td class="now">кнопка, плитка, пара слов</td></tr>
-      <tr style="--d:.85s"><td><b>Причины</b></td><td class="was">список из 21 кода</td><td class="now">три понятные группы</td></tr>
+      <tr style="--d:.85s"><td><b>Причины</b></td><td class="was"><span class="blur">список из 21 кода</span></td><td class="now">три понятные группы</td></tr>
       <tr style="--d:1s"><td><b>Ответственный</b></td><td class="was">не известен</td><td class="now">смена и ФИО мастера</td></tr>
       <tr style="--d:1.15s"><td><b>Итоги смены</b></td><td class="was">сводят вручную</td><td class="now">готовы сразу, на экране</td></tr>
       <tr style="--d:1.3s"><td><b>Показатели стана</b></td><td class="was">не считаются</td><td class="now">доступность, отказы, ремонт</td></tr>
