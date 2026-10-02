@@ -94,6 +94,11 @@
   .shotpair>div{flex:1 1 0;min-width:0}
   .shotpair img{max-height:50vh;max-width:100%;width:auto;border-radius:16px;border:1px solid var(--line);
     box-shadow:0 18px 50px rgba(0,0,0,.55);display:block;margin:0 auto}
+  /* пара в одну высоту: пропорции колонок = пропорции картинок */
+  .shotpair.equal{flex-wrap:nowrap}
+  .shotpair.equal>div{flex:var(--f,1) 1 0;min-width:0}
+  .shotpair.equal img{width:100%;max-width:none;height:auto;max-height:none}
+  @media(max-width:900px){.shotpair.equal{flex-wrap:wrap}.shotpair.equal>div{flex:1 1 100%}.shotpair.equal img{width:auto;max-width:100%;max-height:46vh}}
   .cap{font-size:13px;color:var(--mut);margin-top:10px;text-align:center}
   .shotslide{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center;margin-top:22px}
   .shotslide img{max-width:100%;max-height:60vh;width:auto;display:block;margin:0 auto;border-radius:16px;
@@ -128,7 +133,7 @@
   <div class="glow" style="width:520px;height:520px;background:var(--red);top:-160px;right:-120px"></div>
   <div class="inner" style="text-align:center">
     <div class="hero-badge a" style="--d:.1s">Прокатный стан · Учёт простоев</div>
-    <h1 class="a" style="--d:.3s">Стан стоит —<br>деньги <span style="color:var(--red)">горят</span></h1>
+    <h1 class="a" style="--d:.3s">Каждый час простоя —<br>в <span style="color:var(--acc)">цифрах</span>, а не в догадках</h1>
     <p class="sub a" style="--d:.6s;margin:22px auto 0">Каждая остановка стана — со временем, причиной и ответственным.
     Без бумаг и форм. Система уже работает и готова к пилоту.</p>
     <p class="a" style="--d:.9s;margin-top:34px;color:var(--mut);font-size:14px">Презентация для собственника · 01.10.2026</p>
@@ -198,12 +203,12 @@
 
 <!-- 6. ПУЛЬТ: ДВЕ ТЕМЫ -->
 <section class="slide">
-  <div class="inner" style="text-align:center">
+  <div class="inner" style="text-align:center;max-width:1320px">
     <div class="kicker a" style="--d:.1s">Живой экран системы</div>
     <h2 class="a" style="--d:.25s">Так выглядит пульт у стана</h2>
-    <div class="shotpair">
-      <div class="a" style="--d:.5s"><img src="screen-pult-light.jpg" alt="Пульт — светлая тема"><div class="cap">☀️ Светлая тема — для дневной смены</div></div>
-      <div class="a" style="--d:.7s"><img src="screen-pult-dark.jpg" alt="Пульт — тёмная тема"><div class="cap">🌙 Тёмная тема — для ночной смены, глаза не устают</div></div>
+    <div class="shotpair equal">
+      <div class="a" style="--d:.5s;--f:0.994"><img src="screen-pult-light.jpg" alt="Пульт — светлая тема"><div class="cap">☀️ Светлая тема — для дневной смены</div></div>
+      <div class="a" style="--d:.7s;--f:2.107"><img src="screen-pult-dark.jpg" alt="Пульт — тёмная тема"><div class="cap">🌙 Тёмная тема — для ночной смены, глаза не устают</div></div>
     </div>
     <p class="sub a" style="--d:1s;margin:20px auto 0">Скриншоты работающего приложения · stan.zmk-project.ru<br>
     Тема переключается одним нажатием — комфортно и днём, и ночью.</p>
